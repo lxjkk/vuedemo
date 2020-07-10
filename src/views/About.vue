@@ -23,8 +23,8 @@ export default {
   methods: {
     async getdata() {
       try {
-        const {data} = await User_info()
-      this.data = data
+        const data = await User_info()
+      this.data = data.data
       this.status = data.code
       } catch(err) {
         console.log(err)
