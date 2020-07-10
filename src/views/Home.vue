@@ -1,10 +1,12 @@
 <template>
   <div class="home">
+    <div>
+        <img alt="Vue logo" src="../assets/logo.png">
+    </div>
     <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/list">List</router-link>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="欢迎你来到我的网页"/>
   </div>
 </template>
 

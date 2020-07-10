@@ -1,9 +1,9 @@
 import axios from 'axios'
 // import Qs from 'qs'
 import { Message } from 'element-ui'
-let baseUrl = 'http://192.168.3.134/api'
+let baseUrl = 'http://192.168.3.135/api'
 if(process.env.NODE_ENV === 'development') {
-    baseUrl = 'http://192.168.3.134/api'
+    baseUrl = 'http://192.168.3.135/api'
     console.log('测试环境')
 } else {
     baseUrl = 'http://www.lxjkk.icu:3000/api'
