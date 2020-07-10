@@ -1,7 +1,15 @@
 import axios from 'axios'
 // import Qs from 'qs'
 import { Message } from 'element-ui'
-const baseUrl = 'http://192.168.3.134/api'
+let baseUrl = 'http://192.168.3.134/api'
+if(process.env.NODE_ENV === 'development') {
+    baseUrl = 'http://192.168.3.134/api'
+    console.log('测试环境')
+} else {
+    baseUrl = 'http://www.lxjkk.icu:3000/api'
+    console.log('生产环境')
+
+}
 const api_Server = axios.create({
     baseURL: baseUrl,
     timeout: 5000,
