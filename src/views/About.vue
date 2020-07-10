@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <button @click="back">返回登录</button>
-    <p>{{ $ONLINE_TEST(1) }}</p>
+    <p>{{ $ONLINE_TEST(status) }}</p>
     <p v-for="item in data" :key="item.id">{{ item.name }}
       <button @click="see_info">查看信息</button>
     </p>
@@ -16,7 +16,8 @@ export default {
   },
   data() {
     return {
-      data: ''
+      data: '',
+      status: 1
     }
   },
   methods: {
@@ -24,6 +25,7 @@ export default {
       try {
         const {data} = await User_info()
       this.data = data
+      this.status = data.code
       } catch(err) {
         console.log(err)
       }
