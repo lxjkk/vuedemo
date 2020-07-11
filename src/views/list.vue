@@ -86,6 +86,7 @@ export default {
             clearInterval(interval)
           }
         })
+        alert('111')
         // 移动端巨鹿小于滚动的位置
       } else if (this.scrollTop > alls) {
         interval = setInterval(() => {
