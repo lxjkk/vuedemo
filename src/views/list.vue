@@ -124,6 +124,7 @@ export default {
         })
       } else {
         document.documentElement.scrollTop = document.body.scrollTop = alls
+        alert('111')
       }
       // else if(this.scrollTop === alls) {
       //     document.documentElement.scrollTop = document.body.scrollTop = alls
