@@ -75,18 +75,17 @@ export default {
       const that = this
       // 移动的距离是第一个的时候
       if (alls === 0) {
-        interval = setInterval(() => {
+        interval = setInterval(function() {
           let issend =
-            Math.floor(-this.scrollTop / 4) === 0
+            Math.floor(-that.scrollTop / 4) === 0
               ? send
-              : Math.floor((alls - this.scrollTop) / 4)
+              : Math.floor((alls - that.scrollTop) / 4)
           document.documentElement.scrollTop = that.scrollTop + issend
           if (that.scrollTop <= alls) {
             document.documentElement.scrollTop = document.body.scrollTop = alls
             clearInterval(interval)
           }
         })
-        alert('111')
         // 移动端巨鹿小于滚动的位置
       } else if (this.scrollTop > alls) {
         interval = setInterval(() => {
