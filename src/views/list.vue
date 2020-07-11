@@ -7,7 +7,7 @@
           style="list-style:none;margin: 20px 0;"
           v-for="(item, index) in list"
           :key="index"
-          @click="move(index)"
+          @click.native="move(index)"
         >{{item+(index+1)}}</li>
       </ul>
     </div>
