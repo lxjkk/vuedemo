@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <input type="text" v-model="userid" /><br>
     <input type="tetr" v-model="password" /><br>
-    <button @click="enter">确定</button>
+    <van-button plain hairline type="primary" @click="enter">确定</van-button>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .hello {
   h1 {
-    color: $theme-color;
+    color: $color-text-primary;
   }
 }
 h3 {
