@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <common-Header custom />
-   <div class="main">
+   <div class="main" v-loading="is_loading">
       <van-pull-refresh v-model="isLoading" style="width: 100%;" @refresh="onRefresh">
-      <content-info v-for="item in [1,2,3,4,5]" @click.native="$router.push({path: '/p/'+item})" :key="item"/>
+      <content-info v-for="item in list" :item="item" @click.native="$router.push({path: '/p/'+item.id, query:{id:item.id}})" :key="item.id"/>
       <load-more />
       </van-pull-refresh>
     </div>
@@ -16,6 +16,8 @@
 import commonHeader from '@/components/common-use/common-header'
 import contentInfo from '@/components/common-use/contentinfo'
 import loadMore from '@/components/common-use/load-more'
+import { home_info } from '@/api/getdata'
+
 export default {
   name: 'Home',
   components: {
@@ -27,7 +29,12 @@ export default {
     return {
       count: 0,
       isLoading: false,
+      list: [],
+      is_loading: false
     }
+  },
+  mounted() {
+    this.getlist()
   },
   methods: {
     onRefresh() {
@@ -37,7 +44,17 @@ export default {
         this.isLoading = false;
         this.count++;
       }, 1000);
-    }
+    },
+    async getlist() {
+      try {
+        this.is_loading = true
+        const {data} = await home_info()
+        this.list = data
+        this.is_loading = false
+      } catch(err) {
+        console.log(err)
+      }
+      }
   }
 }
 </script>

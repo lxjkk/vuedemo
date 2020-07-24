@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 let baseUrl = 'http://192.168.3.135/api'
 if(process.env.NODE_ENV === 'development') {
-    baseUrl = 'http://192.168.3.135/api'
+    baseUrl = 'http://localhost:8081/api'
     console.log('测试环境')
 } else {
     baseUrl = 'http://www.lxjkk.icu:3000/api'

@@ -19,6 +19,7 @@ body {
   width: 100%;
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   background: $background-color-base-body;
+  user-select: none;
 }
 #nav {
   padding: 30px;
