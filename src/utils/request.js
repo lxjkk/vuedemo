@@ -43,7 +43,7 @@ api_Server.interceptors.response.use(response => {
     }
     return Promise.resolve(res)
 },err=> {
-    console.log(err.response.data.errors)
+    console.log(err)
     if(err.response && err.response.status === 422) {
         // console.log(err.response.status, '请求格式错误！')
         Message({

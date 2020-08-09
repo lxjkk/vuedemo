@@ -37,13 +37,10 @@ export default {
     this.getlist()
   },
   methods: {
-    onRefresh() {
-      setTimeout(() => {
-        // eslint-disable-next-line no-undef
-        this.$toast('刷新成功');
-        this.isLoading = false;
-        this.count++;
-      }, 1000);
+    async onRefresh() {
+      this.is_loading = true
+      await this.getlist()
+      this.isLoading = false;
     },
     async getlist() {
       try {
