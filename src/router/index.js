@@ -44,6 +44,13 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
+  scrollBehavior (to, form, saveTop) {
+    if(saveTop) {
+      return saveTop
+    } else {
+      return {x:0,y:0}
+    }
+  },
   base: process.env.BASE_URL,
   routes
 })
